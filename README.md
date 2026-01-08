@@ -1,4 +1,4 @@
-# 🧠 Automated Fetal Brain Biometry from Ultrasound Images
+#  Automated Fetal Brain Biometry from Ultrasound Images
 
 > **A unified deep learning framework to estimate Biparietal Diameter (BPD) and Occipitofrontal Diameter (OFD) using fetal axial ultrasound images — via Landmark Detection *and* Segmentation-based approaches.**
 
@@ -39,7 +39,7 @@ Given a **fetal axial ultrasound image of the brain**, design an algorithm that 
 
 ---
 
-## 🧠 Solution Architecture
+##  Solution Architecture
 
 ```
 Input Ultrasound Image
@@ -57,7 +57,7 @@ Input Ultrasound Image
 
 ---
 
-# 🅰️ Task A – Landmark Detection Based Approach
+#  Task A – Landmark Detection Based Approach
 
 ### 🎯 Objective
 
@@ -135,7 +135,7 @@ Quantitative metrics are always paired with **qualitative inspection**.
 
 ---
 
-# 🅱️ Task B – Segmentation Based Approach
+#  Task B – Segmentation Based Approach
 
 ### 🎯 Objective
 
