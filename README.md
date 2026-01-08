@@ -1,8 +1,16 @@
 #  Automated Fetal Brain Biometry from Ultrasound Images
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Framework](https://img.shields.io/badge/Framework-PyTorch-red)
+![Domain](https://img.shields.io/badge/Domain-Medical%20Imaging-brightgreen)
+![Task](https://img.shields.io/badge/Task-Landmark%20%7C%20Segmentation-orange)
+![Status](https://img.shields.io/badge/Status-Research--Grade-success)
+
+
 > **A unified deep learning framework to estimate Biparietal Diameter (BPD) and Occipitofrontal Diameter (OFD) using fetal axial ultrasound images — via Landmark Detection *and* Segmentation-based approaches.**
 
 ---
+
 
 ## 📌 Project Overview (At a Glance)
 
