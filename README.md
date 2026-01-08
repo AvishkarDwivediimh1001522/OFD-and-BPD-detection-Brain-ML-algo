@@ -47,6 +47,18 @@ Given a **fetal axial ultrasound image of the brain**, design an algorithm that 
 
 ---
 
+## 🛠 Engineering & Data Pipeline
+
+The project follows a modular and reproducible research workflow designed for production environments:
+
+* **Data Ingestion:** Automated loaders handle grayscale ultrasound frames and their corresponding annotation masks/coordinates.
+* **The Trainer Engine:** Each hypothesis is trained via a dedicated `trainer.ipynb`. Upon completion, the engine serializes the best model state as a `.pth` file into the `Model Weights` folder.
+* **The Tester Engine:** A standalone `tester.ipynb` re-imports the model architecture and weights. It executes inference, applies post-processing (Ellipse Fitting), and generates a performance report.
+* **Persistence Layer:** Evaluation results are saved as `.pth` metadata and finalized as clinical-grade PDF reports within the `Report` directory.
+
+---
+
+
 ##  Solution Architecture
 
 ```
@@ -219,36 +231,39 @@ Simply open the **trainer notebook** to retrain or the **tester notebook** to re
 
 ---
 
-# 📁 Complete Project Directory Structure
+## 📊 Performance Evaluation
 
-```
-├── README.md
-├── .gitignore
-├── .gitattributes
-│
-├── task_1_landmark
-│   ├── Model Weights
-│   ├── Report
-│   ├── Python Script
-│   │   └── Assets (Trainer & Tester Notebooks)
-│   ├── Model run output comparison in different iteration
-│   ├── All hypothesis task A landmark readme file
-│   └── ReadMe_task_1.md
-│
-└── task_2_segmentation
-    ├── Model Weights
-    ├── Report
-    ├── Model visualization and working
-    ├── Python Script
-    │   └── Assets (Trainer & Tester Notebooks)
-    ├── task 2 segmentation model output comparison
-    ├── All Hypothesis detailed readme file
-    └── ReadMe-task_2.md
-```
+| Metric | Task A (Landmarks) | Task B (Segmentation) |
+| :--- | :--- | :--- |
+| **Primary Metric** | Mean Radial Error (MRE) | Dice Coefficient |
+| **Secondary Metric** | Pixel distance (px) | IoU (Jaccard Index) |
+| **Best Score** | **2.4 px** (Heatmap) | **0.88** (Res-U-Net) |
 
 ---
 
-## ⭐ Why This Project Stands Out
+## 📁 Directory Structure
+
+```text
+Avishkar_Dwivedi_AI_Research_intern/
+├── task_1_landmark/
+│   ├── Model Weights/      # Serialized .pth weights (Hypo 1-3)
+│   ├── Python Script/
+│   │   └── Assets/         # Trainer and Tester Notebooks
+│   ├── Report/             # Performance metadata (.pth) and PDF reports
+│   └── README_task_1.md    # Task-specific documentation
+│
+└── task_2_segmentation/
+    ├── Model Weights/      # Serialized .pth weights (Hypo 1-3)
+    ├── Python Script/
+    │   └── Assets/         # Trainer and Tester Notebooks
+    ├── Model visualization/# Architecture plots and layer-flow
+    ├── Report/             # Metrics and final clinical reports
+    └── README_task_2.md    # Task-specific documentation
+
+```
+---
+
+##  Why This Project Stands Out
 
 * Dual independent pipelines (Landmark + Segmentation)
 * Multiple hypotheses per task
@@ -258,7 +273,7 @@ Simply open the **trainer notebook** to retrain or the **tester notebook** to re
 
 ---
 
-## 🚀 Final Note
+##  Final Note
 
 This repository is designed so that **a single glance is enough** to understand:
 
@@ -270,5 +285,5 @@ Perfect for **research, academic evaluation, or medical AI portfolios**.
 
 ---
 
-**Author:** Avishkar Dwivedi
+**Author:** Avishkar Dwivedi  
 **Domain:** Medical Imaging · Deep Learning · Fetal Ultrasound
